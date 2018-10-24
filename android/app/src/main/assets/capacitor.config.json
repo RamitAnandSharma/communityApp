@@ -1,0 +1,6 @@
+{
+  "appId": "com.communityApp",
+  "appName": "communityApp",
+  "bundledWebRuntime": false,
+  "webDir": "www"
+}

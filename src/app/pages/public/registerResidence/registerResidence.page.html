@@ -1,0 +1,110 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>reg</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <ion-grid>
+    <form class="form-horizontal" [formGroup]="registerForm" novalidate>
+
+      <ion-list>
+        <ion-item>
+          <ion-label>C</ion-label>
+          <ionic-selectable formControlName="city" itemValueField="id" itemTextField="city" [items]="cities" (onChange)="cityChange($event)" [canClear]="true" searchPlaceholder="Enter city name" placeholder="Select" headerColor="primary" [canSearch]="true">
+            <!--[shouldFocusSearchbar]="true" -->
+            <ng-template ionicSelectableTitleTemplate>
+              TC <span style="color: gray;">(Test)</span>
+            </ng-template>s
+            <ng-template ionicSelectableCloseButtonTemplate>
+              <ion-icon slot="icon-only" name="close"></ion-icon>
+            </ng-template>
+          </ionic-selectable>
+        </ion-item>
+        <ion-item [hidden]="!( registerForm.controls.city.dirty && registerForm.controls.city.valid)">
+          <ion-label>Loc</ion-label>
+          <ionic-selectable formControlName="location" itemValueField="id" itemTextField="building" [items]="locations" (onChange)="locationChange($event)" [canClear]="true" searchPlaceholder="Enter location name" placeholder="Select" headerColor="primary" [canSearch]="true">
+            <ng-template ionicSelectableTitleTemplate>Location</ng-template>
+            <ng-template ionicSelectableCloseButtonTemplate>
+              <ion-icon slot="icon-only" name="close"></ion-icon>
+            </ng-template>
+          </ionic-selectable>
+        </ion-item>
+        <ion-item [hidden]="!(registerForm.controls.location.dirty && registerForm.controls.location.valid)">
+          <ion-label>TA</ion-label>
+          <ion-input text-right type="text" slot="end" formControlName="type" placeholder="Enter Input" clearInput></ion-input>
+        </ion-item>
+        <slot [hidden]="!(registerForm.controls.location.dirty && registerForm.controls.location.valid)">
+          <ion-row [hidden]="registerForm.controls.type.valid">
+            <ion-col size="4">
+              <ion-button expand="block" fill="outline">sa</ion-button>
+            </ion-col>
+            <ion-col size="4">
+              <ion-button expand="block" fill="outline">As</ion-button>
+            </ion-col>
+            <ion-col size="4">
+              <ion-button expand="block" fill="outline">As</ion-button>
+            </ion-col>
+            <ion-col size="4">
+              <ion-button expand="block" fill="outline">As</ion-button>
+            </ion-col>
+          </ion-row>
+        </slot>
+        <ion-item [hidden]="!(registerForm.controls.type.dirty && registerForm.controls.type.valid)">
+          <ion-label>T</ion-label>
+          <ion-input ttext-right type="text" slot="end" formControlName="houseId" placeholder="Enter Input" clearInput></ion-input>
+        </ion-item>
+        <slot [hidden]="!(registerForm.controls.type.dirty && registerForm.controls.type.valid)">
+          <ion-row [hidden]="registerForm.controls.houseId.valid">
+            <ion-col size="4">
+              <ion-button expand="block" fill="outline">As</ion-button>
+            </ion-col>
+            <ion-col size="4">
+              <ion-button expand="block" fill="outline">As</ion-button>
+            </ion-col>
+            <ion-col size="4">
+              <ion-button expand="block" fill="outline">As</ion-button>
+            </ion-col>
+            <ion-col size="4">
+              <ion-button expand="block" fill="outline">As</ion-button>
+            </ion-col>
+            <ion-col size="4">
+              <ion-button expand="block" fill="outline">As</ion-button>
+            </ion-col>
+            <ion-col size="4">
+              <ion-button expand="block" fill="outline">As</ion-button>
+            </ion-col>
+            <ion-col size="4">
+              <ion-button expand="block" fill="outline">As</ion-button>
+            </ion-col>
+          </ion-row>
+        </slot>
+        <ion-item [hidden]="!(registerForm.controls.houseId.dirty && registerForm.controls.houseId.valid)">
+          <ion-label>T</ion-label>
+          <ion-input text-right type="text" slot="end" formControlName="occupantType" placeholder="Enter Input" clearInput></ion-input>
+        </ion-item>
+        <slot [hidden]="!(registerForm.controls.houseId.dirty && registerForm.controls.houseId.valid)">
+          <ion-row [hidden]="registerForm.controls.occupantType.valid">
+            <ion-col size="4">
+              <ion-button expand="block" fill="outline">As</ion-button>
+            </ion-col>
+            <ion-col size="4">
+              <ion-button expand="block" fill="outline">As</ion-button>
+            </ion-col>
+            <ion-col size="4">
+              <ion-button expand="block" fill="outline">As</ion-button>
+            </ion-col>
+          </ion-row>
+        </slot>
+      </ion-list>
+
+      <ion-text color="danger" [hidden]="!(registerForm.controls.occupantType.dirty && registerForm.controls.occupantType.valid)">
+        <h5>sample Messge</h5>
+      </ion-text>
+      <ion-button color="danger" expand="block" [hidden]="!(registerForm.controls.occupantType.dirty && registerForm.controls.occupantType.valid)">NEXT</ion-button>
+
+    </form>
+  </ion-grid>
+</ion-content>

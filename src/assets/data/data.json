@@ -1,0 +1,14 @@
+{
+  "city": [
+    { "id": 1, "city": "name1", "state": "state 1" },
+    { "id": 2, "city": "name2", "state": "state 1" }
+  ],
+  "place": [
+    { "id": 1, "building": "place 1"  },
+    { "id": 2, "building": "place 2" }
+  ],
+  "building": [
+    { "id": 1, "flat": "flat1"  },
+    { "id": 2, "flat": "flat2"  }
+  ]
+}

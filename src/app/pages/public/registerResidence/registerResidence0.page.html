@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>reg</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <form  novalidate>
+    <ion-row>
+      <ion-col>
+        <ion-list padding>
+          <ion-item>
+            <ion-label>Port</ion-label>
+            <ionic-selectable
+            [(ngModel)]="port"
+            [items]="ports"
+             itemValueField="id"
+             itemTextField="name"
+             [canSearch]="true"
+             (onChange)="portChange($event)">
+            </ionic-selectable>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>
